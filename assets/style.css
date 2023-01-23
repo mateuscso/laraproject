@@ -66,7 +66,7 @@ ul {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
 }
 
 section {
@@ -162,6 +162,14 @@ section .content p {
 #navigation .logo path[fill*="00856F"],
 #backToTopButton circle {
     fill: var(--primary-color);
+}
+
+nav#navigation { 
+    color: black;
+    -moz-transition: background-color .1s ease-in;
+    -webkit-transition: background-color .1s ease-in;
+    -o-transition: background-color .1s ease-in;
+    transition: background-color .1s ease-in;
 }
 
 button.open-menu path[stroke*="#00856F"],
@@ -362,12 +370,17 @@ body.menu-expanded button path {
 }
 
 #home img {
-    width: 26.4rem;
+    width: 60rem;
     display:block;
     /* para tirar o minimo detalhe da parte de baixo da imagem, pois tinha um espacinho em branco */
     margin-inline:auto;
     object-position: 0 10px;
+    object-fit: cover;
 
+}
+#home .wrapper .col-b { 
+    display: flex;
+    flex-flow: column-reverse;
 }
 
 
@@ -481,6 +494,9 @@ body.menu-expanded button path {
     gap: .8;
 }
 
+#contact ul li svg{
+    margin-right: 4px;
+}
 /* ======= FOOTER ============================================= */
 footer {
     background-color: var(--primary-color);
@@ -743,10 +759,15 @@ footer .social-links {
 
     #home .button {
         margin: 0;
+        margin-bottom: 84px;
     }
 
     #home img {
-        width: 42rem;
+        object-fit: cover;
+    }
+    #home .wrapper .col-b { 
+        flex-flow: column-reverse;
+        /* overflow: hidden; */
     }
 
 
@@ -785,7 +806,7 @@ footer .social-links {
 
     /* ======= CONTACT ============================== */
     #contact .wrapper {
-        grid-template-columns: 1fr 57.5rem;
+        grid-template-columns: 1fr 55.5rem;
         grid-template-areas: 'A B';
     }
 

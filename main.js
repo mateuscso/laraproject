@@ -15,7 +15,19 @@ function onScroll() {
   activateMenuAtCurrentSection(about);
   activateMenuAtCurrentSection(contact);
 
+  changeLogoColor();
   // activateMenuAtCurrentSection(services);
+}
+
+function changeLogoColor() {
+  const logoHeader = document.getElementById("header-logo");
+  console.log(logoHeader);
+
+  if (scrollY > 0) {
+    logoHeader.setAttribute("src", "./assets/logo-lara-vieira.svg");
+  } else {
+    logoHeader.setAttribute("src", "./assets/logo-lara-vieira-jovs.svg");
+  }
 }
 
 function activateMenuAtCurrentSection(section) {
